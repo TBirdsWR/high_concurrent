@@ -1,3 +1,6 @@
+/**
+ * 演示死锁
+ */
 public class DeadLock {
 
     private Object o1 = new Object();

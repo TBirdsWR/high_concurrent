@@ -3,6 +3,10 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 一个线程监控list 另一个线程往list里添加数据   三种实现方式  volatile 、wait notify 、countDownLatch
+ * volatile 不能做到很精确
+ */
 public class MyContains {
 
     private Object o;
