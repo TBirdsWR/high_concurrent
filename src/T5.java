@@ -1,5 +1,8 @@
 import java.util.concurrent.TimeUnit;
 
+/**
+ * synchronized锁住的是堆内存里的对象，而非栈上面的引用，当发生异常的时候，会释放锁，其他线程可执行；当变量指向一块新的对象时，其他线程可使用新的对象锁
+ */
 public class T5 {
 
     private Object o = new Object();

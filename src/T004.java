@@ -13,14 +13,16 @@ public class T004 {
 
     public static void mm (){
         synchronized (T004.class){
+
             count--;
+            System.out.println(Thread.currentThread().getName() + "count = " + count);
         }
     }
 
 
     public static void mmm() {
         count --;
-        System.out.println(Thread.currentThread().getName() + "count = " + count);
+        System.out.println( "mmm:count = " + count);
 
     }
 
@@ -34,6 +36,12 @@ public class T004 {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
 
         };
@@ -43,6 +51,12 @@ public class T004 {
             for (int i = 0;i<100;i++){
 
                 t.mmm();
+
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
 
         }).start();
